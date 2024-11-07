@@ -40,6 +40,11 @@ app.use("/api/contacts", contactsRoutes);
 app.use("/api/messages", messagesRoutes);
 app.use("/api/channel", channelRoutes);
 
+// Root route to Welcome API message
+app.get("/", (req, res) => {
+  res.send("Welcome to the Chat App Backend API!");
+});
+
 // Create an HTTP server and attach it to the Express app
 // This server will be used for both HTTP and WebSocket connections
 const server = app.listen(port, () => {
